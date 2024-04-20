@@ -46,8 +46,16 @@ Error generating stack: `+o.message+`
   outline: none;
   border: 1px solid #acacac;
 
+  &:focus {
+    border: 1px solid ${e=>e.isError?"#FF3D3D":"#000000"};
+  }
+
+  &::placeholder {
+    color: #acacac;
+  }
+
   ${e=>e.isError&&`
-    border-color: red;
+    border-color: #FF3D3D;
   `}
 `,Jo=({isError:e,...t})=>M.jsx(M.Fragment,{children:M.jsx(zm,{isError:e,...t})}),Om=fe.div`
   width: 212px;
