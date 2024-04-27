@@ -244,7 +244,7 @@ Error generating stack: `+i.message+`
   line-height: 20px;
   font-size: 9.5px;
   color: #ff3d3d;
-`,fn=({mainText:e,subText:t,label:n,errorMessage:r,children:l})=>P.jsxs(Lg,{children:[P.jsxs("div",{children:[P.jsx(Og,{children:e}),P.jsx(Dg,{children:t})]}),P.jsxs(zg,{children:[P.jsx(jg,{children:n}),P.jsx(Ug,{children:l}),P.jsx(Bg,{children:r&&r.find(i=>i!=="")})]})]}),Fg=H.div`
+`,fn=({mainText:e,subText:t,label:n,errorMessage:r,children:l})=>P.jsxs(Lg,{children:[P.jsxs("div",{children:[P.jsx(Og,{children:e}),P.jsx(Dg,{children:t})]}),P.jsxs(zg,{children:[P.jsx(jg,{children:n}),P.jsx(Ug,{children:l}),P.jsx(Bg,{children:r.find(i=>i!=="")})]})]}),Fg=H.div`
   position: relative;
   display: flex;
   flex-direction: column;
