@@ -87,7 +87,7 @@ const NewCardPage = () => {
       {/* 입력 - 카드 번호 */}
       <NewCardInputSection
         mainText={FORM_FIELDS.CARD_NUMBERS.MAIN_TEXT}
-        subText={FORM_FIELDS.CARD_NUMBERS.SUB_TEXT}
+        subText={FORM_FIELDS.CARD_NUMBERS.SUB_TEXT ?? ""}
         label={FORM_FIELDS.CARD_NUMBERS.LABEL}
         errorMessage={errorMessage.cardNumbers}
       >
@@ -95,7 +95,7 @@ const NewCardPage = () => {
           <Input
             key={index}
             maxLength={FORM_FIELDS.CARD_NUMBERS.MAX_LENGTH}
-            placeholder={FORM_FIELDS.CARD_NUMBERS.PLACEHOLDER}
+            placeholder={FORM_FIELDS.CARD_NUMBERS.PLACEHOLDER as string}
             isError={!!errorMessage.cardNumbers[index]}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleCardNumbersChange(e.target.value, index)}
           ></Input>
@@ -105,7 +105,7 @@ const NewCardPage = () => {
       {/* 입력 - 유효 기간 */}
       <NewCardInputSection
         mainText={FORM_FIELDS.CARD_EXPIRATION.MAIN_TEXT}
-        subText={FORM_FIELDS.CARD_EXPIRATION.SUB_TEXT}
+        subText={FORM_FIELDS.CARD_EXPIRATION.SUB_TEXT ?? ""}
         label={FORM_FIELDS.CARD_EXPIRATION.LABEL}
         errorMessage={errorMessage.cardExpiration}
       >
@@ -113,7 +113,7 @@ const NewCardPage = () => {
           <Input
             key={index}
             maxLength={FORM_FIELDS.CARD_EXPIRATION.MAX_LENGTH}
-            placeholder={index === 0 ? FORM_FIELDS.CARD_EXPIRATION.PLACEHOLDER.MONTH : FORM_FIELDS.CARD_EXPIRATION.PLACEHOLDER.YEAR}
+            placeholder={typeof FORM_FIELDS.CARD_EXPIRATION.PLACEHOLDER === "object" ? (index === 0 ? FORM_FIELDS.CARD_EXPIRATION.PLACEHOLDER.MONTH : FORM_FIELDS.CARD_EXPIRATION.PLACEHOLDER.YEAR) : ""}
             isError={!!errorMessage.cardExpiration[index]}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleCardExpirationChange(e.target.value, index)}
           ></Input>
@@ -123,14 +123,14 @@ const NewCardPage = () => {
       {/* 입력 - 소유자 이름 */}
       <NewCardInputSection
         mainText={FORM_FIELDS.USER_NAME.MAIN_TEXT}
-        subText={FORM_FIELDS.USER_NAME.SUB_TEXT}
+        subText={FORM_FIELDS.USER_NAME.SUB_TEXT as string}
         label={FORM_FIELDS.USER_NAME.LABEL}
         errorMessage={errorMessage.userName}
       >
         <Input
           value={cardInfo.userName}
           maxLength={FORM_FIELDS.USER_NAME.MAX_LENGTH}
-          placeholder={FORM_FIELDS.USER_NAME.PLACEHOLDER}
+          placeholder={FORM_FIELDS.USER_NAME.PLACEHOLDER as string}
           isError={!!errorMessage.userName[0]}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleUserNameChange(e.target.value)}
         ></Input>
