@@ -5,7 +5,7 @@ import MasterCardImage from "../../assets/Mastercard.png";
 import VisaImage from "../../assets/Visa.png";
 import CardNumbers from "../cardNumbers/CardNumbers";
 import CardExpiration from "../cardExpiration/CardExpiration";
-import { CARD_BRAND } from "../../constants/setting";
+import { CARD_BRANDS } from "../../constants/setting";
 
 export interface CardPreviewProps {
   cardInfo: CardInfo;
@@ -17,10 +17,10 @@ const CardPreview = ({ cardInfo }: CardPreviewProps) => {
   useEffect(() => {
     const IIN = Math.floor(cardInfo.cardNumbers[0] / 100);
 
-    if (IIN >= CARD_BRAND.MASTERCARD.MIN_NUMBER && IIN <= CARD_BRAND.MASTERCARD.MAX_NUMBER) {
-      setCardBrand(CARD_BRAND.MASTERCARD.NAME);
-    } else if (IIN >= CARD_BRAND.VISA.MIN_NUMBER && IIN <= CARD_BRAND.VISA.MAX_NUMBER) {
-      setCardBrand(CARD_BRAND.VISA.NAME);
+    if (IIN >= CARD_BRANDS.MASTERCARD.MIN_NUMBER && IIN <= CARD_BRANDS.MASTERCARD.MAX_NUMBER) {
+      setCardBrand(CARD_BRANDS.MASTERCARD.NAME);
+    } else if (IIN >= CARD_BRANDS.VISA.MIN_NUMBER && IIN <= CARD_BRANDS.VISA.MAX_NUMBER) {
+      setCardBrand(CARD_BRANDS.VISA.NAME);
     } else {
       setCardBrand("");
     }
@@ -28,9 +28,9 @@ const CardPreview = ({ cardInfo }: CardPreviewProps) => {
 
   const getCardBrandImage = () => {
     switch (cardBrand) {
-      case CARD_BRAND.MASTERCARD.NAME:
+      case CARD_BRANDS.MASTERCARD.NAME:
         return MasterCardImage;
-      case CARD_BRAND.VISA.NAME:
+      case CARD_BRANDS.VISA.NAME:
         return VisaImage;
       default:
         return "";
