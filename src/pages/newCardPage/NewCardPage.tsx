@@ -12,6 +12,7 @@ import useUserNameInput from "../../hooks/useUserNameInput";
 import useCardExpirationInput from "../../hooks/useCardExpirationInput";
 import useCardCompanyInput from "../../hooks/useCardCompanyInput";
 import useCardNumbersInput from "../../hooks/useCardNumbersInput";
+import { CardCompany } from "../../types/type";
 
 const NewCardPage = () => {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ const NewCardPage = () => {
         cvc={CvcState.value}
         userName={UserNameState.value}
         cardExpiration={CardExpirationState.value}
-        cardCompany={CardCompanyState.value}
+        cardCompany={CardCompanyState.value as CardCompany}
         cardNumbers={CardNumbersState.value}
       ></CardPreview>
 

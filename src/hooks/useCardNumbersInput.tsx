@@ -1,5 +1,5 @@
 import { useState } from "react";
-import validators from "../validators/newCardInputValidator";
+import validators from "../utils/newCardInputValidator";
 
 interface CardNumbersState {
   value: string[];
