@@ -16,11 +16,6 @@ interface CardPreviewContainerProps {
   cardCompany: CardCompany | "";
 }
 
-export const CardPreviewContainer = styled.div`
-  width: 100%;
-  height: 238px;
-`;
-
 // 카드 앞면
 export const FrontCard = styled.div<CardPreviewContainerProps>`
   display: flex;
