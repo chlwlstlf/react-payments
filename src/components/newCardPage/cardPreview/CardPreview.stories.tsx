@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import CardPreview, { CardPreviewProps } from "./CardPreview";
+import type { CardCompany } from "../../../types/type";
 
 const meta: Meta<CardPreviewProps> = {
   title: "Components/CardPreview",
@@ -20,7 +21,7 @@ export const Default: Story = {
     cvc: "123",
     userName: "John Doe",
     cardExpiration: ["12", "23"],
-    cardCompany: "",
+    cardCompany: "" as CardCompany,
     cardNumbers: ["1234", "5678", "9012", "3456"],
   },
 };
@@ -31,7 +32,7 @@ export const MasterCard: Story = {
     cvc: "123",
     userName: "MasterCard User",
     cardExpiration: ["12", "23"],
-    cardCompany: "",
+    cardCompany: "" as CardCompany,
     cardNumbers: ["5234", "5678", "9012", "3456"],
   },
 };
@@ -42,7 +43,7 @@ export const Visa: Story = {
     cvc: "123",
     userName: "Visa User",
     cardExpiration: ["12", "23"],
-    cardCompany: "",
+    cardCompany: "" as CardCompany,
     cardNumbers: ["4532", "5678", "9012", "3456"],
   },
 };
